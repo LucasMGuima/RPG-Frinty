@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using RPG.Equipamento;
+using RPG.Equipamento.Cajado;
+
 using RPG.Assets;
 
 namespace RPG
@@ -16,8 +19,13 @@ namespace RPG
             base.idd = idd;
             base.level = 0;
 
+            //status base da classe
             Status status = new Status(40, 20, 15, 20, 160, 45);
             base.setStatus(status);
+
+            //iten quipaveis da calsse
+            Iten[] iten = { new Cajado() };
+            this.setEquipavel(iten);
         }
 
         public void Cura()

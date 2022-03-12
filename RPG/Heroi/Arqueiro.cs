@@ -24,7 +24,8 @@ namespace RPG
             base.setStatus(status);
 
             //itens quipaveis
-            Iten[] iten = { };
+            Iten[] iten = {new ArmaDistancia()};
+            this.setEquipavel(iten);
         }
     }
 }
