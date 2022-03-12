@@ -24,18 +24,10 @@ namespace RPG
             Cajado cajado = new CajadoInicial();
             ArmaDistancia arco = new ArcoLongo();
 
-            Console.WriteLine("Guerreiro");
-            g.equiparMaoDir(espada);
-            g.equiparMaoEsq(escudo);
-            g.equiparMaoDir(cajado);
-
-            Console.WriteLine("\nMago");
-            m.equiparMaoDir(cajado);
-            m.equiparMaoEsq(espada);
-
             Console.WriteLine("\nArqueiro");
-            a.equiparMaoEsq(espada);
-            a.equiparMaoDir(arco);
+            //a.equiparMaoDir(arco);
+
+            a.Ataque();
         }
     }
 }
