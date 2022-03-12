@@ -57,9 +57,13 @@ namespace RPG
                 atk += tempArma.getAtaque();
             }
 
-            Console.WriteLine("Atk -> {0} Flehcas -> {1}", atk, this.qtdFlecha);
+            Console.WriteLine("Atk -> {0} Flehcas -> {1}", atk);
             return atk;
         }
 
+        public void addFlecha(int qtdFlecha)
+        {
+            this.qtdFlecha += qtdFlecha;
+        }
     }
 }

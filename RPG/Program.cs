@@ -25,9 +25,15 @@ namespace RPG
             ArmaDistancia arco = new ArcoLongo();
 
             Console.WriteLine("\nArqueiro");
-            //a.equiparMaoDir(arco);
+            Console.WriteLine("{0} \nMao Direita -> {1}\nMao Esquerda -> {2}", a.nome, a.slots.getMaoDir(), a.slots.getMaoEsq());
 
-            a.Ataque();
+            a.equiparMaoDir(arco);
+            Console.WriteLine("\nArqueiro");
+            Console.WriteLine("{0} \nMao Direita -> {1}\nMao Esquerda -> {2}", a.nome, a.slots.getMaoDir(), a.slots.getMaoEsq());
+
+            a.equiparMaoEsq(arco);
+            Console.WriteLine("\nArqueiro");
+            Console.WriteLine("{0} \nMao Direita -> {1}\nMao Esquerda -> {2}", a.nome, a.slots.getMaoDir(), a.slots.getMaoEsq());
         }
     }
 }
