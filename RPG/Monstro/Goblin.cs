@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 using RPG.Assets;
 
-namespace RPG.Monstro
+namespace RPG.Criatura
 {
     internal class Goblin : Monstro
     {
         public Goblin(int level)
         {
-            Status status = new Status(35, 15, 20, 10, 50, 0, 0);
+            Status status = new Status(35, 15, 20, 10, 50, 5, 5);
             base.status = status;
 
-            base.level = level;
+            base.setLevel(level);
+            base.setBaseExp(5);
         }
     }
 }

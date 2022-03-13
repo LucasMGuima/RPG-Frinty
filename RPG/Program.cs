@@ -9,6 +9,7 @@ using RPG.Equipamento.Arco;
 using RPG.Equipamento.Escudo;
 using RPG.Equipamento.Cajado;
 using RPG.HabilidadeMagia.Magia;
+using RPG.Criatura;
 
 namespace RPG
 {
@@ -16,19 +17,47 @@ namespace RPG
     {
         static void Main(string[] args)
         {
-            Guerreiro g = new Guerreiro("Kyalin", 0);
             Mago m = new Mago("Magui", 0);
-            Arqueiro a = new Arqueiro("Pripo", 0);
 
-            Espada espada = new EspadaCurta();
-            Escudo escudo = new EscudoMadeira();
-            Cajado cajado = new CajadoInicial();
-            ArmaDistancia arco = new ArcoLongo();
+            Dragao d = new Dragao(1);
+            Aranha a = new Aranha(1);
+            Goblin g = new Goblin(1);
+
+            Cajado cajado = new CajadoAgua();
 
             m.equiparMaoDir(cajado);
 
             Magia magia = m.AtaqueMagico();
-            Console.WriteLine("MAGIA \nElemento -> {0}\nDano -> {1}", magia.getElemento(), magia.getDano());
+
+            Console.WriteLine("\nNome: {0} \nExp: {1}", m.nome, m.getExp());
+
+            Console.WriteLine("Magia de {0} conjurada, com {1} de poder de ataque.\n", magia.getElemento(), magia.getDano());
+
+            Console.WriteLine("\nDragao vida: {0}", d.status.getVida());
+            d.RecebeAtaque(magia);
+            Console.WriteLine("Dragao vida: {0}", d.status.getVida());
+            getExp(d, m);
+
+            Console.WriteLine("\nAranha vida: {0}", a.status.getVida());
+            a.RecebeAtaque(magia);
+            Console.WriteLine("Aranha vida: {0}", a.status.getVida());
+            getExp(a, m);
+
+            Console.WriteLine("\nGoblin vida: {0}", g.status.getVida());
+            g.RecebeAtaque(magia);
+            Console.WriteLine("Goblin vida: {0}", g.status.getVida());
+            getExp(g, m);
+
+            Console.WriteLine("\nNome: {0} \nExp: {1}", m.nome, m.getExp());
+        }
+
+        public static void getExp(Monstro m, Heroi h)
+        {
+            if (m.getVivo()) return;
+
+            int exp = m.dropExp();
+            Console.WriteLine("{0} deu {1} EXP.", m.GetType(), exp);
+            h.addExp(exp);
         }
     }
 }

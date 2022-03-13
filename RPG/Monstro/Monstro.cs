@@ -5,13 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 
 using RPG.Assets;
+using RPG.HabilidadeMagia.Magia;
+using RPG.Equipamento;
 
-namespace RPG.Monstro
+namespace RPG.Criatura
 {
     internal class Monstro
     {
-        public int level;
+        private bool vivo = true;
+        private int baseExp;
+        private int level;
         public Status status;
+        public Elemento fraqueza = Elemento.Normal;
+        public Elemento resisntencia = Elemento.Normal;
+
+        protected void setBaseExp(int baseExp)
+        {
+            this.baseExp = baseExp;
+        }
+        protected void setLevel(int level)
+        {
+            if (level <= 0) level = 1;
+            this.level = level;
+        }
+
+        public bool getVivo()
+        {
+            return this.vivo;
+        }
 
         public float Ataque()
         {
@@ -40,9 +61,85 @@ namespace RPG.Monstro
             {
                 this.status.setVida(this.status.getVida() + dano);
                 Console.WriteLine("Recebeu dano.");
-                return;
+                if (Vivo(this.status.getVida())) return;
+                else
+                {
+                    Console.WriteLine("Morreu.");
+                    return;
+                }
             }
             Console.WriteLine("O ataque não passou pela defesa.");
+        }
+
+        public void RecebeAtaque(Magia magia)
+        {
+            float magicDef = (float) Math.Floor(this.status.Inteligencia * calcResistencia(magia.getElemento()));
+            float magicFraq = (float)Math.Floor(magia.getDano() * calcFraqueza(magia.getElemento()));
+
+            float magicDano = (this.status.Inteligencia + magicDef) - (magia.getDano() + magicFraq);
+
+            if(magicDano < 0)
+            {
+                this.status.setVida(this.status.getVida() + magicDano);
+                Console.WriteLine("{0} -> Recebeu dano.",this.GetType());
+                if (Vivo(this.status.getVida())) return;
+                else
+                {
+                    Console.WriteLine("{0} -> Morreu.",this.GetType());
+                    return;
+                }
+            }
+            Console.WriteLine("O ataque não passou pela defesa");
+
+        }
+
+        public int dropExp()
+        {
+            return this.baseExp*this.level;
+        }
+
+        public Iten dropIten()
+        {
+            Iten drop = new Iten();
+            //aplicar logica de escolha do drop com base em uma "loot-table"
+            return drop;
+        }
+
+        //FUNCOES PRIVADAS
+        private float calcResistencia(Elemento elementoAtak)
+        {
+            float resisElement = 0;
+
+            //se ele for resistente aquele elemento
+            if(elementoAtak == resisntencia)
+            {
+                resisElement = 0.25f;
+            }
+
+            return resisElement;
+        }
+
+        private float calcFraqueza(Elemento elementoAtak)
+        {
+            float farqElement = 0;
+
+            //se ele for resistente aquele elemento
+            if (elementoAtak == fraqueza)
+            {
+                farqElement = 0.25f;
+            }
+
+            return farqElement;
+        }
+
+        private bool Vivo(float vida)
+        {
+            if (vida <= 0)
+            {
+                this.vivo = false;
+                return false;
+            }
+            return true;
         }
     }
 }

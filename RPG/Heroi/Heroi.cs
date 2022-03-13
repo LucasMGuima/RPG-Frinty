@@ -29,6 +29,11 @@ namespace RPG
             this.status = status;
         }
 
+        public int getExp()
+        {
+            return this.exp;
+        }
+
         public Status getStatus()
         {
             return this.status;
@@ -78,7 +83,7 @@ namespace RPG
             if (podeEquipar(equip)) this.slots.setMaoDir(equip);
         }
 
-        private void addExp(int exp)
+        public void addExp(int exp)
         {
             this.exp += exp;
             //logica para apssar de nivel
@@ -87,10 +92,10 @@ namespace RPG
         private bool podeEquipar(Iten equip)
         {
             int size = this.equipavel.Length;
-            Console.WriteLine("Size -> {0}", size);
+            //Console.WriteLine("Size -> {0}", size);
             for(int i = 0; i<size; i++)
             {
-                Console.WriteLine("{0} -> {1}", i, this.equipavel[i]);
+                //Console.WriteLine("{0} -> {1}", i, this.equipavel[i]);
                 if (equip.GetType().IsSubclassOf(this.equipavel[i].GetType()))
                 {
                     return true;

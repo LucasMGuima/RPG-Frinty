@@ -6,16 +6,23 @@ using System.Threading.Tasks;
 
 using RPG.Assets;
 
-namespace RPG.Monstro
+namespace RPG.Criatura
 {
     internal class Dragao : Monstro
     {
+        private Elemento elemento;
         public Dragao(int level)
         {
-            Status status = new Status(50, 10, 25, 10, 80, 0, 0);
+            Status status = new Status(50, 10, 25, 10, 80, 45, 30);
             base.status = status;
 
-            base.level = level;
+            base.setLevel(level);
+            base.setBaseExp(100);
+
+            this.elemento = Elemento.Fogo;
+
+            base.fraqueza = Elemento.Agua;
+            base.resisntencia = Elemento.Ar;
         }
     }
 }

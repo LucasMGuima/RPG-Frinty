@@ -128,8 +128,8 @@ namespace RPG
             float randNum = 1 + (float)(new Random(DateTime.Now.Millisecond).Next(base.getStatus().Sorte)) / 100;
             //Console.WriteLine("Rand -> " + randNum);
             atk = (base.getStatus().Inteligencia + base.getStatus().Sabedoria) * randNum;
-            atk = (float)Math.Floor(atk);
-            Console.WriteLine("Atk Magico -> " + atk);
+            atk = (float) Math.Floor(atk);
+            Console.WriteLine("\nAtk Magico -> " + atk);
 
             return atk;
         }
