@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using RPG.Equipamento;
 using RPG.Equipamento.Arco;
+using RPG.Equipamento.Cajado;
 
 namespace RPG.Assets
 {
@@ -16,8 +17,8 @@ namespace RPG.Assets
 
         public void setMaoEsq(Iten iten)
         {
-            //se tiver com um item de duas maos ou um arco/besta equipado desequipa da outra mao
-            if (maoEsq.GetType().IsSubclassOf(typeof(EspadaDuasMaos)) || maoEsq.GetType().IsSubclassOf(typeof(ArmaDistancia)))
+            //se tiver com um item de duas maos, um arco/besta ou um cajado equipado desequipa da outra mao
+            if (maoEsq.GetType().IsSubclassOf(typeof(EspadaDuasMaos)) || maoEsq.GetType().IsSubclassOf(typeof(ArmaDistancia)) || maoEsq.GetType().IsSubclassOf(typeof(Cajado)))
             {
                 this.maoDir = new Iten();
             }
@@ -32,6 +33,11 @@ namespace RPG.Assets
             {
                 this.maoDir = new Iten();
             }
+            //se for um Cajado desequipa oq estiver na outra
+            if (iten.GetType().IsSubclassOf(typeof(Cajado)))
+            {
+                this.maoDir = new Iten();
+            }
 
             Console.WriteLine("{0} foi equipado na mão esquerda.", iten.getNome());
         }
@@ -42,10 +48,10 @@ namespace RPG.Assets
 
         public void setMaoDir(Iten iten)
         {
-            //se tiver com um item de duas maos ou um arco/besta equipado desequipa da outra mao
-            if (maoDir.GetType().IsSubclassOf(typeof(EspadaDuasMaos)) || maoDir.GetType().IsSubclassOf(typeof(ArmaDistancia)))
+            //se tiver com um item de duas maos, um arco/besta ou um cajado equipado desequipa da outra mao
+            if (maoEsq.GetType().IsSubclassOf(typeof(EspadaDuasMaos)) || maoEsq.GetType().IsSubclassOf(typeof(ArmaDistancia)) || maoEsq.GetType().IsSubclassOf(typeof(Cajado)))
             {
-                this.maoEsq = new Iten();
+                this.maoDir = new Iten();
             }
             this.maoDir = iten;
             //se for uma espada de duas maos equipa nas duas;
@@ -55,6 +61,11 @@ namespace RPG.Assets
             }
             //se for um arco desequipa oq estiver na outra
             if (iten.GetType().IsSubclassOf(typeof(ArmaDistancia)))
+            {
+                this.maoEsq = new Iten();
+            }
+            //se for um Cajado desequipa oq estiver na outra
+            if (iten.GetType().IsSubclassOf(typeof(Cajado)))
             {
                 this.maoEsq = new Iten();
             }

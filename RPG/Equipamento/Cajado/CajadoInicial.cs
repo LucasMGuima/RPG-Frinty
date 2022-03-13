@@ -16,7 +16,7 @@ namespace RPG.Equipamento.Cajado
             base.setVelocidade(1);
             base.setValor(10);
             base.setAlcance(10);
-            base.setAtaque(10);
+            base.setAtaque(5);
 
             Elemento elemento = Elemento.Normal;
             base.setElemento(elemento);

@@ -12,7 +12,7 @@ namespace RPG.Monstro
     {
         public Goblin(int level)
         {
-            Status status = new Status(35, 15, 20, 10, 50, 0);
+            Status status = new Status(35, 15, 20, 10, 50, 0, 0);
             base.status = status;
 
             base.level = level;

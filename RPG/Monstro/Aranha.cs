@@ -12,7 +12,7 @@ namespace RPG.Monstro
     {
         public Aranha(int level)
         {
-            Status status = new Status(20, 5, 35, 10, 40, 0);
+            Status status = new Status(20, 5, 35, 10, 40, 0, 0);
             base.status = status;
 
             base.level = level;

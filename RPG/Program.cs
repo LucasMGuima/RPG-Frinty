@@ -8,6 +8,7 @@ using RPG.Equipamento;
 using RPG.Equipamento.Arco;
 using RPG.Equipamento.Escudo;
 using RPG.Equipamento.Cajado;
+using RPG.HabilidadeMagia.Magia;
 
 namespace RPG
 {
@@ -24,16 +25,10 @@ namespace RPG
             Cajado cajado = new CajadoInicial();
             ArmaDistancia arco = new ArcoLongo();
 
-            Console.WriteLine("\nArqueiro");
-            Console.WriteLine("{0} \nMao Direita -> {1}\nMao Esquerda -> {2}", a.nome, a.slots.getMaoDir(), a.slots.getMaoEsq());
+            m.equiparMaoDir(cajado);
 
-            a.equiparMaoDir(arco);
-            Console.WriteLine("\nArqueiro");
-            Console.WriteLine("{0} \nMao Direita -> {1}\nMao Esquerda -> {2}", a.nome, a.slots.getMaoDir(), a.slots.getMaoEsq());
-
-            a.equiparMaoEsq(arco);
-            Console.WriteLine("\nArqueiro");
-            Console.WriteLine("{0} \nMao Direita -> {1}\nMao Esquerda -> {2}", a.nome, a.slots.getMaoDir(), a.slots.getMaoEsq());
+            Magia magia = m.AtaqueMagico();
+            Console.WriteLine("MAGIA \nElemento -> {0}\nDano -> {1}", magia.getElemento(), magia.getDano());
         }
     }
 }

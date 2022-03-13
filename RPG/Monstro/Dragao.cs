@@ -12,7 +12,7 @@ namespace RPG.Monstro
     {
         public Dragao(int level)
         {
-            Status status = new Status(50, 10, 25, 10, 80, 0);
+            Status status = new Status(50, 10, 25, 10, 80, 0, 0);
             base.status = status;
 
             base.level = level;

@@ -67,6 +67,7 @@
     <Compile Include="Equipamento\Espada\Claymore.cs" />
     <Compile Include="Equipamento\Espada\Espada.cs" />
     <Compile Include="Equipamento\Espada\EspadaCurta.cs" />
+    <Compile Include="HabilidadeMagia\Magia\Magia.cs" />
     <Compile Include="Monstro\Aranha.cs" />
     <Compile Include="Heroi\Arqueiro.cs" />
     <Compile Include="Monstro\Dragao.cs" />

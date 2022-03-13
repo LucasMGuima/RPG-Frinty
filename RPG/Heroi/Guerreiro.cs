@@ -19,7 +19,7 @@ namespace RPG
             base.level = 0;
 
             //status base da classe
-            Status status = new Status(55, 40, 10, 20, 175, 0);
+            Status status = new Status(55, 40, 10, 20, 175, 10, 5);
             base.setStatus(status);
 
             //tipos de item q pode equipar

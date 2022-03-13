@@ -23,7 +23,7 @@ namespace RPG
 
             
             //status base da classe
-            Status status = new Status(35, 20, 25, 20, 170, 30);
+            Status status = new Status(35, 20, 25, 20, 170, 15, 10);
             base.setStatus(status);
 
             //itens quipaveis
