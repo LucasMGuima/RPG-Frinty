@@ -10,6 +10,8 @@ namespace RPG.Equipamento
     {
         private string nome;
         private int valor;
+        //por padrão todo item é estacavel
+        private bool estacavel = true;
 
         protected void setNome(string nome)
         {
@@ -27,6 +29,15 @@ namespace RPG.Equipamento
         public int getValor()
         {
             return this.valor;
+        }
+
+        protected void setEstavavel(bool estacavel)
+        {
+            this.estacavel = estacavel;
+        }
+        public bool getEstacavel()
+        {
+            return this.estacavel;
         }
     }
 }

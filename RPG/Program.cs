@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using RPG.Equipamento;
 using RPG.Equipamento.Arco;
 using RPG.Equipamento.Escudo;
+using RPG.Itens.Consumivel;
 using RPG.Equipamento.Cajado;
 using RPG.HabilidadeMagia.Magia;
 using RPG.Criatura;
@@ -19,6 +20,43 @@ namespace RPG
         {
             Mago m = new Mago("Magui", 0);
 
+            
+        }
+
+        public static void getExp(Monstro m, Heroi h)
+        {
+            if (m.getVivo()) return;
+
+            int exp = m.dropExp();
+            Console.WriteLine("{0} deu {1} EXP.", m.GetType(), exp);
+            h.addExp(exp);
+        }
+
+        public static void testInv(Heroi m)
+        {
+            ArcoDeCaca ac = new ArcoDeCaca();
+            ArcoLongo al = new ArcoLongo();
+            Besta b = new Besta();
+            CajadoAgua ca = new CajadoAgua();
+
+            Pao pao = new Pao();
+
+
+            m.inventario.mostrarConteudo();
+            m.inventario.guardarIten(ac);
+            m.inventario.guardarIten(al);
+            m.inventario.guardarIten(pao);
+            m.inventario.guardarIten(pao);
+            m.inventario.guardarIten(pao);
+            m.inventario.guardarIten(pao);
+            m.inventario.guardarIten(pao);
+            m.inventario.guardarIten(pao);
+            m.inventario.guardarIten(al);
+
+            m.inventario.mostrarConteudo();
+        }
+        public static void testExp(Mago m)
+        {
             Dragao d = new Dragao(1);
             Aranha a = new Aranha(1);
             Goblin g = new Goblin(1);
@@ -49,15 +87,6 @@ namespace RPG
             getExp(g, m);
 
             Console.WriteLine("\nNome: {0} \nExp: {1}", m.nome, m.getExp());
-        }
-
-        public static void getExp(Monstro m, Heroi h)
-        {
-            if (m.getVivo()) return;
-
-            int exp = m.dropExp();
-            Console.WriteLine("{0} deu {1} EXP.", m.GetType(), exp);
-            h.addExp(exp);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using RPG.Assets;
 using RPG.Equipamento;
+using RPG.Assets.Inventario;
 
 namespace RPG
 {
@@ -18,7 +19,7 @@ namespace RPG
         private Status status;
         public SlotsEquipamento slots = new SlotsEquipamento();
         private Iten[] equipavel;
-                
+        public Bag inventario = new Bag(3);
         protected void setEquipavel(Iten[] equipavel)
         {
             this.equipavel = equipavel;

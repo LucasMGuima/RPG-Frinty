@@ -11,6 +11,11 @@ namespace RPG.Equipamento
         private int ataque;
         private float velocidade;
 
+        public Arma()
+        {
+            base.setEstavavel(false);
+        }
+
         protected void setAtaque(int ataque)
         {
             this.ataque = ataque;
