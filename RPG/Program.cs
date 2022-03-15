@@ -20,7 +20,8 @@ namespace RPG
         {
             Mago m = new Mago("Magui", 0);
 
-            
+            testInv(m);
+            testExp(m);
         }
 
         public static void getExp(Monstro m, Heroi h)

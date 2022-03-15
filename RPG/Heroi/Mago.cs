@@ -77,6 +77,7 @@ namespace RPG
                 }
 
                 //conjura a magia
+                this.mana -= 10;
                 if (maoDir.GetType().IsSubclassOf(typeof(Cajado)))
                 {
                     magia = conjurarMagia(maoDir);
