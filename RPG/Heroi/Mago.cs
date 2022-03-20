@@ -64,7 +64,7 @@ namespace RPG
             Iten maoEsq = base.slots.getMaoEsq();
             Iten maoDir = base.slots.getMaoDir();
 
-            Magia magia = new Magia(Elemento.Normal, 0);
+            Magia magia = new Magia(Assets.Elemento.Normal, 0);
 
             //checa se possui um cajado, se n possuir retorna "nada".
             if (maoDir.GetType().IsSubclassOf(typeof(Cajado)) || maoEsq.GetType().IsSubclassOf(typeof(Cajado)))

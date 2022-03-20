@@ -13,7 +13,7 @@ namespace RPG.Equipamento.Cajado
         public CajadoAr()
         {
             base.setNome("Cajado de Ar");
-            base.setElemento(Elemento.Ar);
+            base.setElemento(Assets.Elemento.Ar);
         }
     }
 }

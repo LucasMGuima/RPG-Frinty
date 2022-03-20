@@ -27,7 +27,7 @@ namespace RPG
             base.setEquipavel(equipavel);
         }
 
-        public new float Ataque()
+        public override float Ataque()
         {
             float atk = 0;
             float randNum = 1 + (float)(new Random(DateTime.Now.Millisecond).Next(base.getStatus().Sorte)) / 100;

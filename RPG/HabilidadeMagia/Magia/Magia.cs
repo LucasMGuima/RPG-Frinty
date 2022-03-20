@@ -10,16 +10,16 @@ namespace RPG.HabilidadeMagia.Magia
 {
     class Magia
     {
-        private Elemento elemento;
+        private Assets.Elemento elemento;
         private float dano;
 
-        public Magia(Elemento elemento, float dano)
+        public Magia(Assets.Elemento elemento, float dano)
         {
             this.elemento = elemento;
             this.dano = dano;
         }
 
-        public Elemento getElemento()
+        public Assets.Elemento getElemento()
         {
             return this.elemento;
         }

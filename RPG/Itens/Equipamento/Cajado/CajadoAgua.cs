@@ -13,7 +13,7 @@ namespace RPG.Equipamento.Cajado
         public CajadoAgua()
         {
             base.setNome("Cajado de Água");
-            base.setElemento(Elemento.Agua);
+            base.setElemento(Assets.Elemento.Agua);
         }
     }
 }

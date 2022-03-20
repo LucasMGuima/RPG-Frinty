@@ -10,14 +10,14 @@ namespace RPG.Equipamento.Cajado
 {
     class Cajado : Arma
     {
-        private Elemento elemento;
+        private Assets.Elemento elemento;
         private int alcance;
 
-        protected void setElemento(Elemento elemento)
+        protected void setElemento(Assets.Elemento elemento)
         {
             this.elemento = elemento;
         }
-        public Elemento getElemento()
+        public Assets.Elemento getElemento()
         {
             return elemento;
         }

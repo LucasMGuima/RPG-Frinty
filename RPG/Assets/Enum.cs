@@ -14,4 +14,9 @@ namespace RPG.Assets
         Ar,
         Terra
     }
+
+    public enum tipoLoot
+    {
+
+    }
 }

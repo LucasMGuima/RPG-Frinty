@@ -40,7 +40,7 @@ namespace RPG
             return this.status;
         }
 
-        public float Ataque()
+        public virtual float Ataque()
         {
             float atk = 0;
             float randNum = 1 + (float) (new Random(DateTime.Now.Millisecond).Next(this.status.Sorte)) / 100;

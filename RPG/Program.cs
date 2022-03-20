@@ -19,9 +19,9 @@ namespace RPG
         static void Main(string[] args)
         {
             Mago m = new Mago("Magui", 0);
+            Dragao d = new Dragao(1);
 
-            testInv(m);
-            testExp(m);
+            Console.WriteLine(d.dropIten().getNome());
         }
 
         public static void getExp(Monstro m, Heroi h)

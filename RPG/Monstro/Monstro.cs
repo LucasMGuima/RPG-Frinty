@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using RPG.Assets;
 using RPG.HabilidadeMagia.Magia;
 using RPG.Equipamento;
+using RPG.Itens.Consumivel;
+using RPG.Equipamento.Arco;
+using RPG.Equipamento.Cajado;
+using RPG.Equipamento.Escudo;
 
 namespace RPG.Criatura
 {
@@ -15,9 +19,10 @@ namespace RPG.Criatura
         private bool vivo = true;
         private int baseExp;
         private int level;
+
         public Status status;
-        public Elemento fraqueza = Elemento.Normal;
-        public Elemento resisntencia = Elemento.Normal;
+        public Assets.Elemento fraqueza = Assets.Elemento.Normal;
+        public Assets.Elemento resisntencia = Assets.Elemento.Normal;
 
         protected void setBaseExp(int baseExp)
         {
@@ -100,13 +105,18 @@ namespace RPG.Criatura
 
         public Iten dropIten()
         {
-            Iten drop = new Iten();
             //aplicar logica de escolha do drop com base em uma "loot-table"
+            Iten[] lootTable = { new Pao(), new Claymore(), new  CajadoAr(), new ArcoDeCaca()};
+            int size = lootTable.Length;
+
+            int numRand = new Random().Next(size);
+            Iten drop = lootTable[numRand];
+
             return drop;
         }
 
         //FUNCOES PRIVADAS
-        private float calcResistencia(Elemento elementoAtak)
+        private float calcResistencia(Assets.Elemento elementoAtak)
         {
             float resisElement = 0;
 
@@ -119,7 +129,7 @@ namespace RPG.Criatura
             return resisElement;
         }
 
-        private float calcFraqueza(Elemento elementoAtak)
+        private float calcFraqueza(Assets.Elemento elementoAtak)
         {
             float farqElement = 0;
 

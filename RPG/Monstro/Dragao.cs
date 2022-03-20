@@ -10,7 +10,7 @@ namespace RPG.Criatura
 {
     internal class Dragao : Monstro
     {
-        private Elemento elemento;
+        private Assets.Elemento elemento;
         public Dragao(int level)
         {
             Status status = new Status(50, 10, 25, 10, 80, 45, 30);
@@ -19,10 +19,10 @@ namespace RPG.Criatura
             base.setLevel(level);
             base.setBaseExp(100);
 
-            this.elemento = Elemento.Fogo;
+            this.elemento = Assets.Elemento.Fogo;
 
-            base.fraqueza = Elemento.Agua;
-            base.resisntencia = Elemento.Ar;
+            base.fraqueza = Assets.Elemento.Agua;
+            base.resisntencia = Assets.Elemento.Ar;
         }
     }
 }

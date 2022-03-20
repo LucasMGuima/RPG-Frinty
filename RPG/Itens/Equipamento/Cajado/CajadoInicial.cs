@@ -18,7 +18,7 @@ namespace RPG.Equipamento.Cajado
             base.setAlcance(10);
             base.setAtaque(5);
 
-            Elemento elemento = Elemento.Normal;
+            Assets.Elemento elemento = Assets.Elemento.Normal;
             base.setElemento(elemento);
         }
     }
