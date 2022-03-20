@@ -19,9 +19,7 @@ namespace RPG
         static void Main(string[] args)
         {
             Mago m = new Mago("Magui", 0);
-            Dragao d = new Dragao(1);
-
-            Console.WriteLine(d.dropIten().getNome());
+            testInv(m);
         }
 
         public static void getExp(Monstro m, Heroi h)
@@ -54,6 +52,14 @@ namespace RPG
             m.inventario.guardarIten(pao);
             m.inventario.guardarIten(al);
 
+            m.inventario.mostrarConteudo();
+
+            Console.WriteLine("{0}: {1}hp", m.nome, m.getStatus().getVida());
+            m.RecebeAtaque(70);
+            Console.WriteLine("{0}: {1}hp", m.nome, m.getStatus().getVida());
+
+            m.inventario.usarIten(2, m);
+            Console.WriteLine("{0}: {1}hp", m.nome, m.getStatus().getVida());
             m.inventario.mostrarConteudo();
         }
         public static void testExp(Mago m)

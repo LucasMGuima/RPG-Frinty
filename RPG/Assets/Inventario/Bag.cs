@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using RPG.Equipamento;
+using RPG.Itens.Consumivel;
+using RPG.Equipamento.Escudo;
 
 namespace RPG.Assets.Inventario
 {
@@ -52,11 +54,41 @@ namespace RPG.Assets.Inventario
             Console.WriteLine("O inventario está cheio, n foi pocivel guardar {0}", iten.getNome());
         }
 
+        public void usarIten(int itenId, Heroi h)
+        {
+            //usa o item na posiçõa itenId
+            if(itenId >= this.espacos)
+            {
+                Console.WriteLine("O esapço desejado é maior que o tamanho da mochila");
+                return;
+            }
+
+            SlotInventario slot = this.slot[itenId];
+            //checa se o item é um consumivel ou equipamento
+            if (slot.getIten().GetType().IsSubclassOf(typeof(Consu)))
+            {
+                //é um consumivel
+                Consu consumivel = (Consu) slot.getIten();
+                consumivel.Efeito(h); //aplica o efeito do consumivel
+                this.slot[itenId].setQtdIten(-1); //decrementa o item usado
+                return;
+            }
+            if(slot.getIten().GetType().IsSubclassOf(typeof(Arma)) || slot.getIten().GetType().IsSubclassOf(typeof(Escudo)))
+            {
+                //é um equipavel
+                return;
+            }
+        }
         public void mostrarConteudo()
         {
             Console.WriteLine("---------INV----------");
             for(int i = 0; i < espacos; i++){
                 Console.WriteLine("{0} -> {1} x{2}", i, slot[i].getIten().getNome(), slot[i].getQtd());
+                if (slot[i].getIten().GetType().IsSubclassOf(typeof(Consu)))
+                {
+                    Consu consu = (Consu) slot[i].getIten();
+                    Console.WriteLine("     {0}",consu.QualEfeito());
+                }
             }
             Console.WriteLine("----------------------");
         }

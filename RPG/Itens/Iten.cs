@@ -31,7 +31,7 @@ namespace RPG.Equipamento
             return this.valor;
         }
 
-        protected void setEstavavel(bool estacavel)
+        protected void setEstacavel(bool estacavel)
         {
             this.estacavel = estacavel;
         }

@@ -8,12 +8,10 @@ using RPG.Equipamento;
 
 namespace RPG.Itens.Consumivel
 {
-    class Pao : Iten
+    class Pao : Vida
     {
-        public Pao()
+        public Pao() : base(5, "Pão", 1, true)
         {
-            base.setNome("Pao");
-            base.setValor(5);
         }
     }
 }

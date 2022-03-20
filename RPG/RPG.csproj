@@ -47,7 +47,10 @@
     <Compile Include="Assets\Inventario\Bag.cs" />
     <Compile Include="Assets\Inventario\SlotInventario.cs" />
     <Compile Include="Assets\SlotsEquipamento.cs" />
+    <Compile Include="Itens\Consumivel\Consu.cs" />
     <Compile Include="Itens\Consumivel\Pao.cs" />
+    <Compile Include="Itens\Consumivel\Queijo.cs" />
+    <Compile Include="Itens\Consumivel\Vida.cs" />
     <Compile Include="Itens\Equipamento\Arco\ArcoDeCaca.cs" />
     <Compile Include="Itens\Equipamento\Arco\ArcoLongo.cs" />
     <Compile Include="Itens\Equipamento\Arco\ArmaDistancia.cs" />

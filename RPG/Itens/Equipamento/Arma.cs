@@ -13,7 +13,7 @@ namespace RPG.Equipamento
 
         public Arma()
         {
-            base.setEstavavel(false);
+            base.setEstacavel(false);
         }
 
         protected void setAtaque(int ataque)
