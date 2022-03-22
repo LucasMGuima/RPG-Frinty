@@ -9,5 +9,5 @@ Objetivos e metas de conteudo e funcionalidades para o RPG, essa lista pode alme
 - [ ] LevelUp;
 - [x] Equipaveis;
 - [ ] Drops;
-- [ ] Fraquezas Elementasi;
+- [ ] Fraquezas Elementais;
 - [ ] Interface;
