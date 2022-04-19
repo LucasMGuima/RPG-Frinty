@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Equipamento
 {
-    abstract class Iten
+    class Iten
     {
         private string nome;
         private int valor;

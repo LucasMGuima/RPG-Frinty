@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Equipamento
 {
-    abstract class EspadaDuasMaos : Espada
+    class EspadaDuasMaos : Espada
     {
         public EspadaDuasMaos()
         {

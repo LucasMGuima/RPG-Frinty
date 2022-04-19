@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Equipamento.Arco
 {
-    abstract class ArmaDistancia : Arma
+    class ArmaDistancia : Arma
     {
         private int alcance;
 
