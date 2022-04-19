@@ -8,7 +8,7 @@ using RPG.Assets;
 
 namespace RPG.Equipamento.Cajado
 {
-    class Cajado : Arma
+    abstract class Cajado : Arma
     {
         private Assets.Elemento elemento;
         private int alcance;

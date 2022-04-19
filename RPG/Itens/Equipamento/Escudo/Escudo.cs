@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Equipamento.Escudo
 {
-    class Escudo : Iten
+    abstract class Escudo : Iten
     {
         private int defesa;
 

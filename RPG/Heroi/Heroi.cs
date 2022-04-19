@@ -10,7 +10,7 @@ using RPG.Assets.Inventario;
 
 namespace RPG
 {
-    internal class Heroi
+    internal abstract class Heroi
     {
         public string nome;
         public int idd;

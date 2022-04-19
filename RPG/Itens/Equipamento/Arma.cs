@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Equipamento
 {
-    class Arma : Iten
+    abstract class Arma : Iten
     {
         private int ataque;
         private float velocidade;

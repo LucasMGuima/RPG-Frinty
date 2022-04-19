@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Equipamento
 {
-    class Espada : Arma
+    abstract class Espada : Arma
     {
         private int qtdMao = 1;
 

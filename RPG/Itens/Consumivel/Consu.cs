@@ -8,7 +8,7 @@ using RPG.Equipamento;
 
 namespace RPG.Itens.Consumivel
 {
-    class Consu : Iten
+    abstract class Consu : Iten
     {
         private string mnsgEfeito;
 

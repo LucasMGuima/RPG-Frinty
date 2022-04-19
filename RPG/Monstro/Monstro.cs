@@ -14,7 +14,7 @@ using RPG.Equipamento.Escudo;
 
 namespace RPG.Criatura
 {
-    internal class Monstro
+    internal abstract class Monstro
     {
         private bool vivo = true;
         private int baseExp;
